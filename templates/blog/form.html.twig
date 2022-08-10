@@ -1,0 +1,46 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h1>
+{% if editMode %}
+   modification de l'article
+    
+{% else %}
+creation d'un article
+    
+{% endif %}
+
+</h1>
+
+{# {{ form(formArticle) }} #}
+{# form() permet d'afficher un formulaire entier #}
+
+{{form_start(formArticle, {
+    attr:{
+    novalidate: 'novalidate'
+    }
+}) }}
+
+{# novalidate: permet de desactiver la validation html automatique #}
+
+{# form _start() & form_end(permettant de delimiter un formulaire, de modifier ses champ changer la methode...#)}
+{# form_weidget() permet de gerer l'affichage d'un champ #}
+{# form_row( permet de gerer  l'affichage d'un champ de cd)#}
+
+{{ form_widget(formArticle.title) }}
+
+{{ form_widget(formArticle.content) }}
+
+{{ form_widget(formArticle.image) }}
+
+{{ form_widget(formArticle.title) }}
+
+{{ form_row(FormatArticle.title) }}
+
+
+{% endblock %}
+
+
+
+
